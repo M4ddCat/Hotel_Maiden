@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Hotel Maiden</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/solarized.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<style>
+	.box {
+		background: url(assets/reception.jpg) no-repeat center;
+		border-radius: 1em;
+		background-size: 100%;
+		width: 100%;
+		height: 9em;
+		margin-top: 1em;
+	}
+
+	.textProfileTable {
+		margin-right: 2em;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.imageProfileTable {
+		border-radius: 0.7em;
+		width: 7em;
+		height: 7em;
+	}
+</style>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<b style="text-align: left;">Дизайн - кейс приложения для бронирования номера в отелях.</b>
+				<br />
+				<div
+					style="margin-top: 0.5em; width: 100%; height: 0.3em; border-radius: 1em; background-color: orange;">
+				</div>
+				<br />
+				<div style="width: 100%;" class="box">
+				</div>
+			</section>
+			<section>
+				<h5>Задача</h5>
+				<b>Данное приложение нужно для облегчения подбора и бронирования номера в отелях.</b>
+			</section>
+			<section>
+				<section>
+					<h5>Целевая аудитория</h5>
+					<br />
+					<b>Данное приложение создавалось, с расчётом на то, что этим приложением будут пользоваться люди от
+						21 до 55 лет.</b>
+					<br />
+					<b>Ниже можно увидеть профили пользователей.</b>
+				</section>
+				<section>
+					<table style="position: absolute;">
+						<tr><b class="textProfileTable">Иван 21 год</b></tr>
+						<tr><img src="assets/Ivan.png" class="imageProfileTable"></tr>
+					</table>
+					<br />
+					<b>
+						Заводчанин, в свободное время программирует и прокрастинирует.
+						Хочет отдохнуть от видов наследия советского прошлого.
+						Любит пить пиво, играть в компьютерные игры, смотреть аниме.
+						<br />
+						Бюджет 100$ в день
+					</b>
+				</section>
+				<section>
+					<table style="position: absolute;">
+						<tr><b class="textProfileTable">Клавдия 51 год</b></tr>
+						<tr><img src="assets/Klavdia.jpeg" class="imageProfileTable"></tr>
+					</table>
+					<br />
+					<b>
+						Домохозяйка, часто занимается спортом.
+						Любит заниматься творчеством в свободное время.
+						Хочет поехать в Европу.
+						<br />
+						Бюджет 25$ в день.
+					</b>
+				</section>
+				<section>
+					<table style="position: absolute;">
+						<tr><b class="textProfileTable">Евдоким 22 года</b></tr>
+						<tr><img src="assets/Evdokim.jpg" class="imageProfileTable"></tr>
+					</table>
+					<br />
+					<b>
+						Грузчик, в свободное от работы время отдыхает от работы.
+						Не выезжает из города.
+						<br />
+						Бюджет 5$ в день.
+					</b>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h5>Пользовательский сценарий.</h5>
+					<b>При запуске приложения, пользователю предлагается заполнить данные, которые нужны для отбора
+						наиболее подходящих для него номеров в отелях (цена, расположение, дата пребывания).
+					</b>
+				</section>
+				<section>
+					<b>Если поля заполнены не полностью, пользователю выдаёт ошибку, где его просят их дозаполнить.
+					</b>
+				</section>
+				<section>
+					<b>После чего пользователю выдаётся перечень подходящих по требованиям номеров в отелях, из которых
+						он выбирает наиболее подходящий для себя номер.
+					</b>
+				</section>
+				<section>
+					<b>При нажатии на один из предложенных номеров открывается более подробная информация о нём.
+					</b>
+				</section>
+				<section>
+					<b>Если пользователю всё нравится, то он переходит к оформлению бронирования номера, где ему нужно
+						будет ввести свои личные данные. В противном же случае, если пользователю не нравится номер, он
+						возвращается к выбору номеров.
+					</b>
+				</section>
+				<section>
+					<b>Если поля заполнены не полностью, или в неправильном формате ( например цифры и символы вместо
+						имени), пользователю выдаёт ошибку, где его просят их дозаполнить или исправить.
+					</b>
+				</section>
+				<section>
+					<b>После заполнения своих данных пользователь должен подтвердить согласие по обработке личной
+						информации, и при удачной попытке связи сервера с отелем, ему выводится окно, где говорится об
+						успешном бронировании. При неудачной попытке
+						связи с отелем пользователю выводит окно с ошибкой, где пользователя просят повторить запрос
+						позже, и ниже кнопка выхода из приложения.</b>
+				</section>
+				<section>
+					<b>При успешном завершении данного сценария пользователю выдаётся инструкция, что делать в отеле,
+						чтобы выкупить забронированный номер, если бронь прошла успешна, а так-же ниже кнопка выхода из
+						приложения.
+					</b>
+				</section>
+			</section>
+			<section>
+				<h4>Прототип</h2>
+					<br />
+					<img class="r-stretch" src="assets/prototype.jpg">
+			</section>
+			<section>
+				<section>
+					<h4>Цветовая палитра приложения</h4>
+					<table class="r-stretch">
+						<tr>
+							<td>
+								<div style="width: 3em; height: 3em; background-color:#FFFFFF;"></div>
+							</td>
+							<td>
+								<div style="width: 3em; height: 3em; background-color:#090600;"></div>
+							</td>
+							<td>
+								<div style="width: 3em; height: 3em; background-color:#FFA733;"></div>
+							</td>
+							<td>
+								<div style="width: 3em; height: 3em; background-color:#C17E26;"></div>
+							</td>
+							<td>
+								<div style="width: 3em; height: 3em; background-color:#C9C7C2;"></div>
+							</td>
+						</tr>
+						<tr>
+							<td>White</td>
+							<td>Black</td>
+							<td>Orange</td>
+							<td>StOrange</td>
+							<td>Gray</td>
+						</tr>
+						<tr>
+							<td>#FFFFFF</td>
+							<td>#090600</td>
+							<td>#FFA733</td>
+							<td>#C17E26</td>
+							<td>#C9C7C2</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<b>Я выбрал белый цвет для фона, чтобы приложение выглядело светлым, а так-же коричневый цвет как у
+						дерева для элементов, который похож на деревянную мебель в отелях.</b>
+				</section>
+			</section>
+			<section>
+				<section>
+					<b>На стартовом экране с логотипом используется декоративный шрифт "Solvay" с использованием тёмного
+						цвета, чтобы был контраст с фоном.</b>
+					<br />
+					<img class="r-stretch" src="assets/startscreen.jpg" />
+				</section>
+				<section>
+					<b>В основной части приложения испольуется шрифт Roboto с использованием тёмного цвета на белом
+						фоне, и белого цвета на фоне элементов управления.</b>
+					<br />
+					<img class="r-stretch" src="assets/welcomeScreen.jpg" />
+				</section>
+			</section>
+			<section>
+				<h4>UI элементы приложения</h4>
+				<img class="r-stretch" src="assets/UIelements.jpg">
+			</section>
+			<section>
+				<section>
+					<h4>Дизайн приложения</h4>
+					<div class="r-stretch">
+						<b>Экран загрузки (splashscreen)</b>
+						<br />
+						<img src="assets/startscreen.jpg" />
+						<br />
+						<b>Нужен для показа пользователю во время загрузки приложения</b>
+					</div>
+				</section>
+				<section>
+					<b>Экран приветствия</b>
+					<br />
+					<img class="r-stretch" src="assets/welcomeScreen.jpg" />
+					<br />
+					<b>Встречает пользователя после загрузки приложения</b>
+				</section>
+				<section>
+					<b>Экран заполнения формы для подбора подходящих отелей</b>
+					<br />
+					<img class="r-stretch" src="assets/formScreen1.jpg" />
+					<br />
+					<b>Используется для получения данных для подбора отелей от пользователя</b>
+				</section>
+				<section>
+					<b>Экран вывода подобранных отелей</b>
+					<br />
+					<img class="r-stretch" src="assets/hotelsScreen.jpg" />
+					<br />
+					<b>Выводит пользователю подобранные отели для дальнейшего выбора</b>
+				</section>
+				<section>
+					<b>Экран с информацией о выбранном отеле</b>
+					<br />
+					<img class="r-stretch" src="assets/selectScreen.jpg" />
+					<br />
+					<b>Показывает пользователю информацию о выбранном отеле</b>
+				</section>
+				<section>
+					<b>Экран ввода данных пользователя</b>
+					<br />
+					<img class="r-stretch" src="assets/dataScreen.jpg" />
+					<br />
+					<b>Нужен для получения данных о пользователе для дальнейшего бронирования отеля</b>
+				</section>
+				<section>
+					<b>Экран успешного бронирования</b>
+					<br />
+					<img class="r-stretch" src="assets/successScreen.jpg" />
+					<br />
+					<b>Выводится пользователю при успешном бронировании отеля</b>
+				</section>
+			</section>
+			<section>
+				<h4>Интерактивный прототип</h4>
+				<a class="r-stretch" href="https://www.figma.com/proto/CYIJcP6Ug73vgFifnpVYJq/Hotel-App?node-id=0%3A1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2" >Нажмите, чтобы перейти к прототипу</a>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
